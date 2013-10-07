@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#333333" >
+	<Button
+            android:id="@+id/formCallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="14sp"
+            android:onClick="onClickCalloutButton" />
+	<Button
+            android:id="@+id/listDirectoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/formCallButton"
+            android:text="View"
+            android:textSize="14sp"
+            android:onClick="onClickViewFolder" />
+	<Button
+            android:id="@+id/pictureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/formCallButton"
+            android:text="Picture"
+            android:textSize="14sp"
+            android:onClick="onClickTakePicture" />
+	<Button
+            android:id="@+id/videoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pictureButton"
+            android:layout_below="@+id/listDirectoryButton"
+            android:text="Video"
+            android:textSize="14sp"
+            android:onClick="onClickTakeVideo" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/first_field"
+		android:textSize="12sp" android:layout_below="@+id/pictureButton" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/second_field" android:layout_below="@id/first_field"
+		android:textSize="12sp" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/third_field" android:layout_below="@id/second_field"
+		android:textSize="12sp" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/fourth_field" android:layout_below="@id/third_field"
+		android:textSize="12sp" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/fifth_field" android:layout_below="@id/fourth_field"
+		android:textSize="12sp" />
+	<!-- <TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/type" android:layout_below="@id/county"
+		android:textSize="12dip" />-->
+	
+</RelativeLayout>

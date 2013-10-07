@@ -1,0 +1,815 @@
+package gov.mt.mdt.data;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Map;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Environment;
+import android.widget.Toast;
+
+import com.esri.android.map.MapView;
+import com.esri.android.map.ags.ArcGISFeatureLayer;
+import com.esri.android.map.ags.ArcGISFeatureLayer.MODE;
+import com.esri.core.geometry.Envelope;
+import com.esri.core.geometry.SpatialReference;
+import com.esri.core.io.UserCredentials;
+import com.esri.core.map.CallbackListener;
+import com.esri.core.map.FeatureEditResult;
+import com.esri.core.map.FeatureSet;
+import com.esri.core.map.Graphic;
+import com.esri.core.tasks.SpatialRelationship;
+import com.esri.core.tasks.ags.query.Query;
+
+public class DataCollectLayer {
+	String featureLayerUrl;
+	
+	String featureLayerName;
+	
+	FeatureSet offlineFeatureSet;
+	FeatureSet offlineUpdates;
+	FeatureSet offlineCreates;
+	FeatureSet offlineDeletes;
+	
+	ArcGISFeatureLayer featureLayer;
+	ArcGISFeatureLayer offlineFeatureLayer;
+	
+	UserCredentials userCreds;
+	String layerDefinitions;
+	
+	SharedPreferences preferences;
+	Context context;
+	
+	MapView map;
+	String filePath;
+	String token;
+	String tokenService;
+	String dataCollectLayerDefin;
+
+	Envelope spatialExtent;
+	SpatialReference srs;
+	
+	String directory;
+
+	/*
+	 * Constructors, one for non-secured service, one for secured.
+	 */
+	public DataCollectLayer(String url, String layerName, SharedPreferences prefs, Context cntx, MapView mapView){
+		featureLayerUrl = url;
+		featureLayerName = layerName;
+		preferences = prefs;
+		context = cntx;
+		map = mapView;
+		directory = preferences.getString("storagepath", "mdt/OfflineData");
+		initDataCollectLayer();
+	}
+	
+	public DataCollectLayer(String url, String layerName, SharedPreferences prefs, Context cntx, MapView mapView, UserCredentials creds){
+		featureLayerUrl = url;
+		featureLayerName = layerName;
+		preferences = prefs;
+		context = cntx;
+		userCreds = creds;	
+		map = mapView; 
+		directory = preferences.getString("storagepath", "mdt/OfflineData");
+		initDataCollectLayer();
+	}
+	
+	private void initDataCollectLayer(){
+		
+		if(notFirstRun()){
+		
+			//setup the files for create/update/delete
+			String updateLayerName = getUpdateLayerName(featureLayerName);
+			String updatePath = OfflineCollectUtils.getJSONFilePath(updateLayerName, directory);
+			String createLayerName = getCreateLayerName(featureLayerName);
+			String createPath = OfflineCollectUtils.getJSONFilePath(createLayerName, directory);
+			String deleteLayerName = getDeleteLayerName(featureLayerName);
+			String deletePath = OfflineCollectUtils.getJSONFilePath(deleteLayerName, directory);
+			
+			//if those files exist, create the featuresets
+			if(OfflineCollectUtils.localFileExists(updatePath)){
+				offlineUpdates = OfflineCollectUtils.createDataCollectFeatureSet(updatePath);
+			}
+			
+			if(OfflineCollectUtils.localFileExists(createPath)){
+				offlineCreates = OfflineCollectUtils.createDataCollectFeatureSet(createPath);
+			}
+			
+			if(OfflineCollectUtils.localFileExists(deletePath)){
+				offlineCreates = OfflineCollectUtils.createDataCollectFeatureSet(deletePath);
+			}
+			
+			//Setup the data layer	
+			String jsonPath = OfflineCollectUtils.getJSONFilePath(featureLayerName, directory);
+			
+			//If the file exists add it to the map.
+			//if(OfflineCollectUtils.localFileExists(jsonPath)){
+				offlineFeatureSet = OfflineCollectUtils.createDataCollectFeatureSet(jsonPath);			
+				
+				ArcGISFeatureLayer.Options layerOptions = new ArcGISFeatureLayer.Options();
+				layerOptions.mode = ArcGISFeatureLayer.MODE.SNAPSHOT;
+			
+				offlineFeatureLayer = new ArcGISFeatureLayer(dataCollectLayerDefin, offlineFeatureSet, layerOptions);			
+				addToMap(map);		
+			//}
+			
+			//If there is no file, lets create one
+			//TODO: logic for firstRun vs. refresh...
+			//else{  
+				//System.out.println("we can't find: " + jsonPath);
+				//System.out.println(Environment.getExternalStorageDirectory() + jsonPath);
+				//refreshDataCollectLayer(jsonPath);
+			//}
+		} else{
+			firstRun();
+		}
+	}
+	
+	public boolean addToMap(final MapView map){
+		map.addLayer(offlineFeatureLayer);
+		return true;
+	}
+	
+	//test send a url, i.e: https://app.mdt.mt.gov/arcgis/rest/services/RIM/MDT_BOUNDARIES_931/FeatureServer/0?f=pjson
+	//should get back a json file with it populated..
+
+	private boolean notFirstRun(){
+		
+		//first get the config name
+		String configName = getConfigName(featureLayerName);
+		String configPath = OfflineCollectUtils.getJSONFilePath(configName, directory);
+				
+		
+		if (OfflineCollectUtils.localFileExists(configPath)) {
+			// read out the config file
+			try {
+				System.out.println("Config File Exists");
+				dataCollectLayerDefin = OfflineCollectUtils
+						.readFileAsString(configPath);
+				readConfigValues(dataCollectLayerDefin);
+				return true;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				//fall back for now
+				return false;
+				//dataCollectLayerDefin = context.getResources().getString(R.string.config_layer_defin_prod3);
+			}
+		} else {
+			//attempt to init service and get the config
+			//TODO: if the config file is missing, we need to do a FirstRun();
+			//firstRun();
+			return false;
+			
+		}
+	}
+	
+	/*
+	 * Gets gets the json file path for the Object, passes it to refresh
+	 */
+	public void updateLayer(){
+		String jsonPath = OfflineCollectUtils.getJSONFilePath(featureLayerName, preferences.getString("storagepath", "mdt/OfflineData"));
+		refreshDataCollectLayer(jsonPath);
+	}
+	
+	/*
+	 * The first step is to initialize the feature layer
+	 * this requires the user to be online, should be ran
+	 * on first run and when the rest url is changed via
+	 * preferences
+	 */
+	private void refreshDataCollectLayer(String filePath){	
+		initService();
+		//now we need to query and write out..	
+		queryFeatureLayer(featureLayer, filePath);
+	}
+	
+	private boolean initService(){
+		//WE need to ping the server to make sure we can hit it, use the url.
+		if(userCreds != null){
+			featureLayer = new ArcGISFeatureLayer(featureLayerUrl, MODE.SNAPSHOT, userCreds);
+			tokenService = getTokenService();
+		}else{
+			featureLayer = new ArcGISFeatureLayer(featureLayerUrl, MODE.SNAPSHOT);
+		}
+		return true;
+	}
+	
+	private boolean firstRun(){
+		//first check if online...
+		if(OfflineCollectUtils.onNetwork(context)){
+			initService();
+			//get the config file
+			thread.start();	
+		}else{
+			Toast.makeText(context, "There is no network, need to be online to initialize service, please setup your data layers while online", Toast.LENGTH_LONG).show();
+		}
+		//then init services
+		//then get config files
+		//when done, query	
+		return true;
+	}
+	
+	private String getTokenService() {
+		// TODO Auto-generated method stub
+		String tokenURL;
+		if(featureLayerUrl.contains("arcgis.com")){
+			tokenURL = "https://www.arcgis.com/sharing/generateToken";
+		}else{
+			tokenURL = null;
+			System.out.println("getTokenService: " + featureLayerUrl);
+			String url[] = featureLayerUrl.split("/rest/");
+			///System.out.println(url[0]);
+			tokenURL = url[0] + "/tokens";
+			//TODO: need to test this...
+			//System.out.println(tokenURL);
+		}
+		return tokenURL;
+	}
+
+	/*
+	 * Queries the feature layers service and write out the json file
+	 */
+	private void queryFeatureLayer(ArcGISFeatureLayer fl, String localFileName) {
+		//System.out.println("queryFeatureLayer: Launch Intent..");
+		/**
+		Intent intent = new Intent(context, GetUpdateService.class);
+		intent.putExtra(GetUpdateService.URL, fl.getUrl());
+		intent.putExtra(GetUpdateService.FILENAME, localFileName);
+		intent.putExtra(GetUpdateService.EXTENT, spatialExtent);
+		intent.putExtra(GetUpdateService.SPREF, srs.getID());
+		context.startService(intent);
+		**/		
+		//need to do this on intent finish...
+		//udateFeatureLayer(result, fileName);
+		
+		final String fileName = localFileName;
+		Query query = new Query();
+		//query.setGeometry(mtStExtent);
+		query.setGeometry(spatialExtent);
+		query.setSpatialRelationship(SpatialRelationship.CONTAINS);
+		query.setInSpatialReference(srs);
+		
+		//TODO: get this from the local tile package
+		query.setOutSpatialReference(srs);
+		//query.setOutSpatialReference(mtSt);
+		
+		query.setOutFields(new String[] { "*" });
+		query.setReturnGeometry(true);
+		// run query on FeatureLayer off UI thread
+		System.out.println("About to Query");
+		fl.queryFeatures(query, new CallbackListener<FeatureSet>() {
+		
+			// an error occurred, log exception
+			@Override
+			public void onError(Throwable e) {
+				//alert the user somehow.
+				System.out.println("There was an error: " + e);
+			}
+
+			// create json from resulting FeatureSet
+			@Override
+			public void onCallback(FeatureSet result) {
+				System.out.println(result.toString());
+				if (result != null) {
+					// Write out the update file through the intent service.
+					System.out.println("Query Successful");
+				
+					//Need a context for this...
+					Intent intent = new Intent(context, WriteOutputService.class);
+					intent.putExtra(WriteOutputService.FEATURESET, result);
+					//intent.putExtra(WriteOutputService.FILENAME, fileName);
+					intent.putExtra(WriteOutputService.FILENAME, featureLayerName);
+					context.startService(intent);
+					//startService(intent);
+					
+					// Updates the featureLayer based on query results
+					updateFeatureLayer(result, fileName);
+				}
+			}
+		});
+		
+	}	
+	
+	/*
+	 * Next two threads deal with getting the configuration file from the service.
+	 */
+	Thread thread = new Thread(new Runnable(){
+
+		@Override
+		public void run() {
+			try{
+				if(userCreds != null){
+					
+					String tokenPath = tokenService + "?username=" + userCreds.getUserName() + "&password=" + userCreds.getPassword() + "&client=referer&referer=http://mdt.mt.gov&expiration=100&f=json";
+					System.out.println("thread: " + tokenPath);
+					
+					DefaultHttpClient hClient = new DefaultHttpClient();
+					HttpGet httpRequest = new HttpGet();
+					httpRequest.setURI(new URI(tokenPath));
+					
+					//HttpGet httpRequest = new HttpGet(tokenPath);
+					HttpResponse httpResponses = hClient.execute(httpRequest);
+					BufferedReader reader = new BufferedReader(new InputStreamReader(httpResponses.getEntity().getContent(), "UTF-8"));
+					String jsonString = reader.readLine();
+					JSONObject jsonObj;
+					try {
+						jsonObj = new JSONObject(jsonString);
+						token = jsonObj.getString("token");
+					} catch (JSONException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+						
+					System.out.println("got Token" + token);
+				}
+				nextThread.start();
+			}catch (URISyntaxException e) {
+		        e.printStackTrace();
+		    } catch (ClientProtocolException e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		    } catch (IOException e) {
+		        // TODO Auto-generated catch block
+		        e.printStackTrace();
+		    }   
+			
+		}
+		
+	});
+	
+	Thread nextThread = new Thread(new Runnable(){
+		
+		@Override
+		public void run() {
+			System.out.println("in run");
+			
+			try{
+			String path;
+			if(token == null){
+				path = featureLayerUrl + "?f=json";
+			}else{
+				path = featureLayerUrl + "?f=json&token=" + token;
+			}
+			
+			DefaultHttpClient defaultClient = new DefaultHttpClient();
+			HttpGet httpGetRequest = new HttpGet(path);
+			HttpResponse httpResponse = defaultClient.execute(httpGetRequest);
+			BufferedReader bufferReader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent(), "UTF-8"));
+			String json = bufferReader.readLine();
+
+			String configName = getConfigName(featureLayerUrl);
+			String configPath = OfflineCollectUtils.getJSONFilePath(configName, directory);
+			FileOutputStream outstream = new FileOutputStream(new File(configPath));
+			outstream.write(json.getBytes());
+			outstream.close();
+			
+			initDataCollectLayer();
+			
+		}
+		catch (Exception e){
+			System.err.println("Error: " + e);
+		}
+		}
+	});
+	
+	
+	/*
+	 * Updates the FeatureLayers based on a new query..
+	 */
+	private void updateFeatureLayer(FeatureSet fs, String name) {
+		// fl.removeAll();
+		ArcGISFeatureLayer fl = offlineFeatureLayer;
+	
+		System.out.println("update feature layer");
+		if (fl != null) {
+			int ids[] = fl.getGraphicIDs();
+			for (int i = 0; i < ids.length; i++) {
+				fl.removeGraphic(ids[i]);
+				
+			}
+			Graphic fsGraphics[] = fs.getGraphics();
+			fl.addGraphics(fsGraphics);
+		}
+	}
+	
+	
+	/*
+	 * Finalizes the edits before pushing them to the service.
+	 */
+	public void finalizeEdits() {
+		// check if we are online
+		//online = isOnline();
+		Boolean online = OfflineCollectUtils.onNetwork(context);
+		//logString += "Finalize Edits: Online = " + online + ". ";
+
+		if (online) {
+			//scrub and send the updates
+			if (offlineUpdates != null){
+				System.out.println("Updates to send");
+				
+				Graphic[] graphics = offlineFeatureSet.getGraphics();
+				Graphic[] updates = new Graphic[graphics.length];
+				
+				// Loop through the graphics and grab the attributes
+				for (int i = 0; i < graphics.length; i++) {
+					Map<String, Object> attribs = graphics[i].getAttributes();
+					
+					updates[i] = new Graphic(null, null, attribs, null);
+				}
+				
+				initService();
+				
+				applyUpdateEdits(updates);
+				System.out.println("Update Attributes for Site Data.");
+			}
+			
+			//send the creates (new features)
+			
+			if (offlineCreates != null){
+				System.out.println("new Features to send");
+				Graphic[] graphics = offlineCreates.getGraphics();
+				applyNewEdits(graphics);
+			}
+			
+			//deletes features
+		
+			if (offlineDeletes != null){
+				System.out.println("Deletes to send");
+				Graphic[] graphics = offlineDeletes.getGraphics();
+				applyDeleteEdits(graphics);
+			}
+			
+			
+		} else {
+			//alertOffline();
+			System.out.println("Finalize Edits: Appears to be offline.");
+		}
+	}
+	
+	/*
+	 * Sync the feature sets This basically compares the edits to existing fs then
+	 * adds the edits to the existing featureset, finally invokes write output service.
+	 */
+	//public void syncFeatureSets(Graphic update, FeatureSet features) {
+	public void syncFeatureSets(Graphic update){
+		Graphic[] graphicFeatures = offlineFeatureSet.getGraphics();
+		Graphic[] synced = new Graphic[graphicFeatures.length];
+
+		Map<String, Object> attrMap = update.getAttributes();
+		
+		//TODO: could be FID or OBJECTID, need to determine from service
+		//need to get the objectID field from config
+		String fid = attrMap.get("OBJECTID").toString();
+		
+		
+		for (int j = 0; j < graphicFeatures.length; j++) {
+			//if (fid == graphicFeatures[j].getAttributeValue("FID").toString()) {
+			//System.out.println(graphicFeatures[j].getAttributeValue("OBJECTID").toString());
+			//System.out.println(graphicFeatures[j].getAttributeValue("OBJECTID"));
+			
+			if (fid.toString().equals(graphicFeatures[j].getAttributeValue("OBJECTID").toString())){
+				Map<String, Object> feature = graphicFeatures[j]
+						.getAttributes();
+				
+				System.out.println("Sync Feature Set: Found the attribute");
+				
+
+				for (String key : attrMap.keySet()) {
+					feature.remove(key);
+					feature.put(key, attrMap.get(key));
+				}
+				// use the same geom, new attributes
+				synced[j] = new Graphic(graphicFeatures[j].getGeometry(), null,
+						feature, null);
+				//TODO: mark this As a BIG Workaround....
+				//We are using the graphic Id identified when it is touched
+				//remove it
+				
+				int graphicUID = graphicFeatures[j].getUid();
+
+				offlineFeatureLayer.removeGraphic(graphicUID);
+				//dataCollectOfflineLayer.removeGraphic(selectedNum);
+				//replace it with an update..
+				offlineFeatureLayer.addGraphic(synced[j]);
+				//dataCollectOfflineLayer.addGraphic(synced[j]);
+
+			} else {
+				// No change use it
+				synced[j] = graphicFeatures[j];
+			}
+		}
+
+		offlineFeatureSet.setGraphics(synced);
+		
+		// Write out the file through the intent service
+		Intent intent = new Intent(context, WriteOutputService.class);
+		intent.putExtra(WriteOutputService.FEATURESET, offlineFeatureSet);
+		intent.putExtra(WriteOutputService.FILENAME, featureLayerName);
+		context.startService(intent);
+	}
+	
+	/*
+	 * Adds to the update feature set based on a new edit, then writes the output.
+	 */
+	public void updateEditFeatureSet(Graphic createGraphic, Graphic deleteGraphic, Graphic updateGraphic){		
+		if(updateGraphic != null){
+			offlineUpdates = getFeatureSetWithGraphicAdded(updateGraphic, offlineUpdates);
+			String updateName = getUpdateLayerName(featureLayerName);
+			invokeWriteOut(updateName, offlineUpdates);
+		}
+		if(createGraphic != null){
+			offlineCreates = getFeatureSetWithGraphicAdded(createGraphic, offlineCreates);
+			String createName = getCreateLayerName(featureLayerName);
+			invokeWriteOut(createName, offlineCreates);
+		}
+		if(deleteGraphic != null){
+			offlineDeletes = getFeatureSetWithGraphicAdded(deleteGraphic, offlineDeletes);
+			String deleteName = getDeleteLayerName(featureLayerName);
+			invokeWriteOut(deleteName, offlineDeletes);
+		}		
+	}
+	
+	private FeatureSet getFeatureSetWithGraphicAdded(Graphic addGraphic, FeatureSet fs){
+		if(fs != null){
+			System.out.println("featureSet exists");
+			Graphic[] adds = fs.getGraphics();
+			Graphic[] newGraphics = new Graphic[adds.length + 1];
+			for(int i = 0; i < adds.length; i++){
+				newGraphics[i] = adds[i];
+			}
+			newGraphics[adds.length] = addGraphic; 
+			fs.setGraphics(newGraphics);
+		}else{
+			System.out.println("featureSet doesn't exist");
+			fs = new FeatureSet();
+			Graphic[] newGraphics = new Graphic[1];
+			newGraphics[0] = addGraphic;
+			fs.setGraphics(newGraphics);
+			try {
+				System.out.println("add graphic to: " + FeatureSet.toJson(fs));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return fs;
+	}
+	
+	private void invokeWriteOut(String fileName, FeatureSet fs){
+		// Write out the update file through the intent service.
+		
+		Intent intent = new Intent(context, WriteOutputService.class);
+		intent.putExtra(WriteOutputService.FEATURESET, fs);
+		intent.putExtra(WriteOutputService.FILENAME, fileName);
+		context.startService(intent);
+	}
+	
+	/*
+	 * Add to create feature set.
+	 */
+	/**
+	public boolean addToCreate(Graphic graphic){
+		System.out.println("addToCreate: " + graphic.toString());
+		if(offlineCreates != null){
+			Graphic[] adds = offlineCreates.getGraphics();
+			Graphic[] newGraphics = new Graphic[adds.length + 1];
+			for(int i = 0; i < adds.length; i++){
+				newGraphics[i] = adds[i];
+			}
+			newGraphics[adds.length] = graphic; 
+			offlineCreates.setGraphics(newGraphics);
+		}else{
+			offlineCreates = new FeatureSet();
+			Graphic[] newGraphics = new Graphic[1];
+			newGraphics[0] = graphic;
+			offlineCreates.setGraphics(newGraphics);
+		}
+		return true;
+		
+	}**/
+	
+	/*
+	 * Read configuration file and populate values 
+	 */
+	private void readConfigValues(String configString){
+		try {
+			JSONObject configJSON = new JSONObject(configString);
+			String objectID = configJSON.getString("objectIdField");
+			//System.out.println("objectID: " + objectID);
+			
+			//featureLayerName = configJSON.getString("name");
+			//System.out.println("name: " + featureLayerName);
+			
+			JSONObject extent = configJSON.getJSONObject("extent");
+			spatialExtent = new Envelope(extent.getDouble("xmin"), extent.getDouble("ymin"), extent.getDouble("xmax"), extent.getDouble("ymax"));
+			//System.out.println("extent: xmin: " + spatialExtent.getXMin() + ", ymin: " + spatialExtent.getYMin() + ", xmax: " + spatialExtent.getXMax() + ", ymax: " + spatialExtent.getYMax());
+			
+			srs = SpatialReference.create(extent.getJSONObject("spatialReference").getInt("wkid"));
+			//System.out.println("Spatial Ref: " + srs.getID());
+			
+			//System.out.println("Config: " + configJSON);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+	/*
+	 * Following methods set the names for updates, deletes, creates
+	 * and config file.
+	 */
+	private String getUpdateLayerName(String layerName) {
+		String updateName = layerName + "_UPDATES";
+		return updateName;	
+	}
+	
+	
+	private String getCreateLayerName(String layerName) {
+		String updateName = layerName + "_CREATES";
+		return updateName;	
+	}
+	
+	private String getDeleteLayerName(String layerName) {
+		String updateName = layerName + "_DELETES";
+		return updateName;	
+	}
+	
+	private String getConfigName(String layerName) {
+		
+		//gets the config name from the featureLayer URL.
+		/**
+		String[] urlParse = featureLayerUrl.split("/FeatureServer/");
+		String[] partialUrlParse = urlParse[0].split("/services/");
+		String updateName = partialUrlParse[1] + "_" + urlParse[1] + "_CONFIG";
+		System.out.println("getConfigName: " + updateName);
+		**/
+		String updateName = layerName + "_CONFIG";
+		return updateName;	
+	}
+	
+	/*
+	 * Next 3 methods deal with updates.
+	 * Applies creates of new features to service.
+	 */
+	public void applyNewEdits(Graphic[] graphic) {
+		featureLayer.applyEdits(graphic, null, null,
+				new CallbackListener<FeatureEditResult[][]>() {
+					public void onError(Throwable error) {
+						System.out.println(error.toString());
+					}
+
+					public void onCallback(FeatureEditResult[][] editResult) {
+						if (editResult[0] != null && editResult[0][0] != null
+								&& editResult[0][0].isSuccess()) {
+							System.out.println("Apply New Edits: EditSuccess.");
+							//logString = "Apply Picture Edits: EditSuccess. ";
+						
+							//TODO: modularize
+							OfflineCollectUtils.renameFile(getCreateLayerName(featureLayerName), directory);
+							offlineCreates = null;		
+						}
+					}
+				});
+	}
+
+	/*
+	 * Applies updates of existing features to service
+	 */
+	public void applyUpdateEdits(Graphic[] graphic) {
+		System.out.println("applyUpdateEdits: " + graphic.hashCode());
+		featureLayer.applyEdits(null, null, graphic, new CallbackListener<FeatureEditResult[][]>() {
+					public void onError(Throwable error) {
+						System.out.println(error.toString());
+					}
+
+					public void onCallback(FeatureEditResult[][] editResult) {
+						if (editResult[2] != null && editResult[2][0] != null	&& editResult[2][0].isSuccess()) {
+							System.out.println("Apply Attribute Edits: EditSuccess");
+							
+							OfflineCollectUtils.renameFile(getUpdateLayerName(featureLayerName), directory);
+							offlineUpdates = null;
+						}
+					}
+				});
+	}
+
+	/*
+	 * Applies deletes of existing features to service
+	 */
+	public void applyDeleteEdits(Graphic[] graphic) {	
+		featureLayer.applyEdits(null, graphic, null, new CallbackListener<FeatureEditResult[][]>() {
+					public void onError(Throwable error) {
+						System.out.println(error.toString());
+					}
+
+					public void onCallback(FeatureEditResult[][] editResult) {
+						if (editResult[2] != null && editResult[2][0] != null	&& editResult[2][0].isSuccess()) {
+							System.out.println("Apply Deletes: EditSuccess");
+							
+							OfflineCollectUtils.renameFile(getDeleteLayerName(featureLayerName), directory);
+							offlineDeletes = null;
+						}
+					}
+				});
+	}
+	
+	
+	/*
+	 * Getters and Setters
+	 * Any major change should run an the inits
+	 * the next time the user is online. 
+	 */
+	
+	public String getFeatureLayerUrl() {
+		return featureLayerUrl;
+	}
+
+	public void setFeatureLayerUrl(String featureLayerUrl) {
+		this.featureLayerUrl = featureLayerUrl;
+	}
+
+	public String getFeatureLayerName() {
+		return featureLayerName;
+	}
+
+	public void setFeatureLayerName(String featureLayerName) {
+		this.featureLayerName = featureLayerName;
+	}
+
+	public FeatureSet getOfflineFeatureSet() {
+		return offlineFeatureSet;
+	}
+
+	public void setOfflineFeatureSet(FeatureSet offlineFeatureSet) {
+		this.offlineFeatureSet = offlineFeatureSet;
+	}
+
+	public FeatureSet getOfflineUpdates() {
+		return offlineUpdates;
+	}
+
+	public void setOfflineUpdates(FeatureSet offlineUpdates) {
+		this.offlineUpdates = offlineUpdates;
+	}
+
+	public ArcGISFeatureLayer getFeatureLayer() {
+		return featureLayer;
+	}
+
+	public void setFeatureLayer(ArcGISFeatureLayer featureLayer) {
+		this.featureLayer = featureLayer;
+	}
+
+	public ArcGISFeatureLayer getOfflineFeatureLayer() {
+		return offlineFeatureLayer;
+	}
+
+	public void setOfflineFeatureLayer(ArcGISFeatureLayer offlineFeatureLayer) {
+		this.offlineFeatureLayer = offlineFeatureLayer;
+	}
+
+	public UserCredentials getUserCreds() {
+		return userCreds;
+	}
+
+	public void setUserCreds(UserCredentials userCreds) {
+		this.userCreds = userCreds;
+	}
+
+	public String getLayerDefinitions() {
+		return layerDefinitions;
+	}
+
+	public void setLayerDefinitions(String layerDefinitions) {
+		this.layerDefinitions = layerDefinitions;
+	}
+
+	public SharedPreferences getPreferences() {
+		return preferences;
+	}
+
+	public void setPreferences(SharedPreferences preferences) {
+		this.preferences = preferences;
+	}
+	
+	
+}

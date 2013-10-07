@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#333333" >
+	<Button
+            android:id="@+id/formCallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:textSize="14dp"
+            android:onClick="onClickCalloutButton" />
+	<Button
+            android:id="@+id/listDirectoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/formCallButton"
+            android:text="View"
+            android:textSize="14dp"
+            android:onClick="onClickViewFolder" />
+	<Button
+            android:id="@+id/pictureButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/formCallButton"
+            android:text="Picture"
+            android:textSize="14dp"
+            android:onClick="onClickTakePicture" />
+	<Button
+            android:id="@+id/videoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/pictureButton"
+            android:layout_below="@+id/listDirectoryButton"
+            android:text="Video"
+            android:textSize="14dp"
+            android:onClick="onClickTakeVideo" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" android:id="@+id/corridor"
+		android:textSize="12dip" android:layout_below="@+id/pictureButton" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/beg" android:layout_below="@id/corridor"
+		android:textSize="12dip" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/end" android:layout_below="@id/beg"
+		android:textSize="12dip" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/district" android:layout_below="@id/end"
+		android:textSize="12dip" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/county" android:layout_below="@id/district"
+		android:textSize="12dip" />
+	<TextView android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/type" android:layout_below="@id/county"
+		android:textSize="12dip" />
+	<!--
+	<Button
+            android:id="@+id/videoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/formCallButton"
+            android:text="Video"
+            android:textSize="14dp"
+            android:onClick="onClickTakePicture" />-->
+</RelativeLayout>

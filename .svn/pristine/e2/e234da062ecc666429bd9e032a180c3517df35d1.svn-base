@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#CCCCCC"
+    android:orientation="vertical"
+    
+    >
+
+    <TextView android:id="@+id/myTracksInfo"  
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:textColor="#000000"
+    android:text="@string/myTracksInfoString"
+    />
+  <Button android:id="@+id/start_recording_button"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent" 
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:text="@string/start_recording"
+    />
+  <Button android:id="@+id/stop_recording_button"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent" 
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:text="@string/stop_recording"
+    />
+  <Button android:id="@+id/add_waypoints_button"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent" 
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:text="@string/add_waypoints"
+    />
+  <TextView android:id="@+id/output"  
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:textColor="#000000"
+    />
+  <TextView android:id="@+id/trackoutput"  
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:textSize="15dp" 
+    android:textStyle="bold"
+    android:textColor="#000000"
+    />
+
+  <Button
+      android:id="@+id/mytrackapp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/mytracks"
+      android:textSize="15dp"
+      android:textStyle="bold" />
+
+</LinearLayout>

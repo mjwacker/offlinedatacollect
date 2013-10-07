@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Offline Collect</string>
+    <string name="status">Satellite Status</string>
+    <string name="finalize">Finalize &amp; Send</string>
+    <string name="label">Some Position Info Down Here</string>
+    <string name="track">Track</string>
+    <string name="collect">Form Management</string>
+    <string name="add_waypoints">Add Waypoint</string>
+    <string name="start_recording">Start recording</string>
+    <string name="stop_recording">Stop recording</string>
+	<string name="myTracksInfoString">Utility for Recording Tracks via MyTracks, output will be saved in MyTracks App</string>
+	<string name="mytracks">MyTracks App</string>
+	<string name="message_nogpsstatus">GPS Status not found. Please install it!</string>
+	<string name="message_nogpstest">GPS Test not found. Please install it!</string>
+	<string name="menu_form">Form Management</string>
+	<string name="menu_track">Track</string>
+	<string name="menu_gpsStatus">GPS Status</string>
+	<string name="menu_gpsTest">GPS Test</string>
+	<string name="menu_update">Update Data</string>
+	<string name="menu_edit">Send Edits</string>
+	<string name="menu_checkin">Check-In</string>
+	<string name="help">Help</string>
+	<string name="preferences">Settings</string>
+	<string name="imagePath"></string>
+	<string name="btn_edit_discard">Discard</string>
+	<string name="btn_edit_apply">Save</string>	
+	<!--  strings used to integrate the ArcGIS sample.. -->
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_online_map">Create Json Features</string>
+    <!-- button strings -->
+    <string name="button_startsketch_text">Start Sketch</string>
+    <string name="button_savesketch_text">Save Sketch</string>
+    <string name="button_submit_text">Submit</string>
+    <string name="button_send">Send</string> 
+    <!-- <string name="pictureLayer_url">https://services1.arcgis.com/dKlvxNSUvl36IGMp/arcgis/rest/services/HSIP_May2013/FeatureServer/0</string>
+    <string name="prod_featureLayer_url">https://services1.arcgis.com/dKlvxNSUvl36IGMp/arcgis/rest/services/HSIP_May2013/FeatureServer/1</string>
+    <string name="pictureLayer_url">https://app.mdt.mt.gov/arcgis/rest/services/hsip/FeatureServer/0</string>
+	<string name="prod_featureLayer_url">https://app.mdt.mt.gov/arcgis/rest/services/hsip/FeatureServer/1</string>-->
+</resources>

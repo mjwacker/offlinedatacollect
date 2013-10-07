@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gov.mt.mdt.data"
+    android:versionCode="2"
+    android:versionName="2.6.0" ><!-- Version 2, new stuff, 2.1 = Version 10.1.1 of Android sdk, 2.2 = significant changes. 2.3 = Field Collection started. 2.3.4 = Preferences added, 2.5 DataCollectLayer Class, moduralized; 2.6 bug fixes, more code cleanup-->
+  	
+  	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--  Dropped course location due to jumpiness of network locations, pure GPS now.
+    <uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION" />-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />  
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- Dropped the mytracks connections for the time being
+    <uses-permission android:name="com.google.android.apps.mytracks.READ_TRACK_DATA" />
+    <uses-permission android:name="com.google.android.apps.mytracks.WRITE_TRACK_DATA" />
+    <uses-permission android:name="com.google.android.apps.mytracks.TRACK_NOTIFICATIONS" />-->
+    <uses-sdk 
+        android:minSdkVersion="14"/>
+
+    
+<uses-feature android:glEsVersion="0x00020000" android:required="true"/> 
+
+
+
+
+<application
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" 
+	    android:theme="@android:style/Theme.Holo">
+        <activity
+            android:name="gov.mt.mdt.data.OfflineMapActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="WriteOutputService"/>
+        <!-- <activity
+            android:name=".MyTracks"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="gov.mt.mdt.data.MyTracks" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>-->
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="gov.mt.mdt.data.PreferencesActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity 
+            android:name=".GridViewActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="gov.mt.mdt.data.GridViewActivity" />
+                <category android:name="android.intent.categroy.DEFAULT" />
+                
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="gov.mt.mdt.data.WebViewActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WebViewUploader"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="gov.mt.mdt.data.WebViewUploader" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ViewImage"
+            	  android:label="@string/app_name" >
+                  <intent-filter>
+                        <action android:name="android.intent.action.VIEW" />
+                        <category android:name="android.intent.category.DEFAULT" />
+                  </intent-filter>
+            </activity>
+            <!--  
+        <receiver android:exported="true"
+                  android:name=".MyTracksReceiver">
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STARTED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.apps.mytracks.TRACK_STOPPED" />
+            </intent-filter>        
+        </receiver>-->
+    </application>
+
+</manifest> 

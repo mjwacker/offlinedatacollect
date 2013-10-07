@@ -1,0 +1,50 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:title="Application Settings">
+   <!-- <PreferenceCategory 
+        android:title="@string/application_preferences"
+        android:key="pref_key_storage_settings">
+         CheckBoxPreference
+            android:key="pref_key_auto_delete"
+            android:summary="@string/pref_summary_auto_delete"
+            android:title="@string/pref_title_auto_delete"
+            android:defaultValue="false" />
+        <Preference 
+            android:key="pref_key_sms_delete_limit"
+            android:dependency="pref_key_auto_delete"
+            android:summary="@string/pref_summary_delete_limit"
+            android:title="@string/pref_title_sms_delete" />
+        
+    </PreferenceCategory>-->
+    <PreferenceCategory>
+        <EditTextPreference
+            android:defaultValue="https://app.mdt.mt.gov/arcgis/rest/services/hsip/FeatureServer/1"
+            android:key="featurelayerurl"
+            android:summary="Rest endpoint of Feature Layer."
+            android:title="Feature Layer URL" />
+        <EditTextPreference
+            android:defaultValue="https://app.mdt.mt.gov/arcgis/rest/services/hsip/FeatureServer/0"
+            android:key="medialayerurl"
+            android:summary="Rest endpoint of Media Layer."
+            android:title="Media Layer URL" />
+        <EditTextPreference
+            android:defaultValue="mdt/OfflineData"
+            android:dialogTitle="storage area"
+            android:key="storagepath"
+            android:summary="Path to store offline data."
+            android:title="Storage Path" />
+        <EditTextPreference
+            android:defaultValue="file:///mnt/sdcard/mdt/Starter_Map/Layers"
+            android:key="offlinemapcache"
+            android:summary="Location of offline maps (.tpk or tiles).  i.e. file:///mnt/sdcard/...."
+            android:title="Offline Map Cache" />
+        <EditTextPreference
+            android:key="username"
+            android:summary="Please maintain your username"
+            android:title="Username" />
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:key="password"
+            android:summary="Please maintain your password"
+            android:title="Password" />
+    </PreferenceCategory>
+    
+</PreferenceScreen>

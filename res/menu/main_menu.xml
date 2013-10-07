@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	   <!--  
+	    <item
+	        android:id="@+id/menu"
+	        android:title="Menu"
+	        android:showAsAction="ifRoom|withText"/>
+	    <item
+	        android:id="@+id/item_form"
+	        android:title="@string/menu_form" />	     
+	    <item
+	        android:id="@+id/item_track"
+	        android:title="@string/menu_track"/>
+	     TODO: Add icons and showAsAction="ifRoom"
+	     		 android:icon="@drawable/....-->
+	    <item
+	        android:id="@+id/item_autoFollow"
+	        android:title="@string/menu_autoFollow" 
+	        android:checkable="true"
+	        android:checked="false"/>
+	    
+	    <item
+	        android:id="@+id/item_gpsStatus"
+	        android:title="@string/menu_gpsStatus" />
+	    <!--
+	    <item
+	        android:id="@+id/item_gpsTest"
+	        android:title="@string/menu_gpsTest" />-->
+	    <item
+	        android:id="@+id/item_update"
+	        android:title="@string/menu_update" />
+	    <item
+	        android:id="@+id/item_edit"
+	        android:title="@string/menu_edit" />
+	    <!-- 
+	    <item
+	        android:id="@+id/item_checkin"
+	        android:title="@string/menu_checkin" />-->
+	    <item
+	        android:id="@+id/item_help"
+	        android:title="@string/help" />
+	    <!-- 
+	    <item
+	        android:id="@+id/item_upload"
+	        android:title="Image Uploader" />-->
+	    <item
+	        android:id="@+id/item_preferences"
+	        android:title="@string/preferences" />
+	    
+	</menu>

@@ -1,0 +1,3250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config.data.sdcard.offline.dir">mdt/OfflineData</string>
+    
+    <!--
+    <string name=\"config.offline.layer.name\">RWISFeatures</string>
+    <string name=\"config.offline.picture.layer.name\">hsip_pics</string>
+    <string name=\"config.local.basemap\">ImageryTPK.tpk</string>-->
+    
+    <string name="config.layer.definition">
+{
+  \"currentVersion\" : 10.11, 
+  \"id\" : 0, 
+  \"name\" : \"Hsip_sample\", 
+  \"type\" : \"Feature Layer\", 
+  \"displayField\" : \"\", 
+  \"description\" : \"\", 
+  \"copyrightText\" : \"\", 
+  \"defaultVisibility\" : true, 
+  \"relationships\" : [], 
+  \"isDataVersioned\" : false, 
+  \"supportsRollbackOnFailureParameter\" : true, 
+  \"supportsAdvancedQueries\" : true, 
+  \"geometryType\" : \"esriGeometryPolyline\", 
+  \"minScale\" : 0, 
+  \"maxScale\" : 0, 
+  \"extent\" : {
+    \"xmin\" : -12913514.0039504, 
+    \"ymin\" : 5536389.29362435, 
+    \"xmax\" : -11624419.865103, 
+    \"ymax\" : 6233070.08009541, 
+    \"spatialReference\" : {
+      \"wkid\" : 102100, 
+      \"latestWkid\" : 3857
+    }
+  }, 
+  \"drawingInfo\" : {
+    \"renderer\" : 
+    {
+      \"type\" : \"simple\", 
+      \"symbol\" : 
+      {
+        \"type\" : \"esriSLS\", 
+        \"style\" : \"esriSLSSolid\", 
+        \"color\" : [
+          132, 
+          0, 
+          168, 
+          255
+        ], 
+        \"width\" : 3.4
+      }, 
+      \"label\" : \"\", 
+      \"description\" : \"\"
+    }, 
+    \"transparency\" : 0, 
+    \"labelingInfo\" : null
+  }, 
+  \"allowGeometryUpdates\" : true, 
+  \"hasAttachments\" : false, 
+  \"htmlPopupType\" : \"esriServerHTMLPopupTypeNone\", 
+  \"hasM\" : false, 
+  \"hasZ\" : false, 
+  \"objectIdField\" : \"FID\", 
+  \"globalIdField\" : \"\", 
+  \"typeIdField\" : \"\", 
+  \"fields\" : [
+{
+      \"name\" : \"FID\", 
+      \"type\" : \"esriFieldTypeInteger\", 
+      \"alias\" : \"FID\", 
+      \"sqlType\" : \"sqlTypeInteger\", 
+      \"nullable\" : false, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SITE_ID\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Site ID\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CORRIDOR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Corridor\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Begin MP\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"End MP\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"Begin DCMI\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"End DCMI\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DISTRICT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"District\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOCATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Location\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"COUNTY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"County\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TYPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Type\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY_CO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare PPMS 09-11\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare TCP 12-16\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY__2\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare HSIP 10-11\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_CO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Comments\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GENERATE_D\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Generate Diagram\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DIAGRAM_DA\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Diagram Data Timeframe\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_OF\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study Date\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_STU\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Comments\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"RECOMMEND_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Recommend Field Study\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_S_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Approved By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CONDUCTED_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Field Study Conducted By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DATE_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Field Study Date\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TOPOGRAPHY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Topography\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Vertical\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL_T\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Verticle Type\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"NUMBER_OF_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Number of Road Lanes\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Width\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_W\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Width\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_S\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SIGHT_DIST\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Sight Distance\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"POSTED_SPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Posted Speed\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CENTERLINE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Centerline Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_M\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MARK\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Markings\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MA_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_SUR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_END\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge End Treatment\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_DRAI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Drainage\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail End Treatment\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DELINEATIO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Delineation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TRAFFIC_SI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Traffic Signal\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"FLASHING_B\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Flashing Beacon\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LUMINAIRES\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Luminaries\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"MEDIAN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Median\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING_SI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SIGN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SI_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATORY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATO_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SIGN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Sign\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SI_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BALL_BANK_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Ball Bank Reading\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REMARKS_RE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Remarks Recommendations\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOC_ERROR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"LR Error\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 50, 
+      \"nullable\" : true, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHAPE_LEN\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"SHAPE_LEN\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }
+  ], 
+  \"indexes\" : [
+    {
+      \"name\" : \"PK__Hsip_sam__C1BEA5A25E29EB3C\", 
+      \"fields\" : \"FID\", 
+      \"isAscending\" : true, 
+      \"isUnique\" : true, 
+      \"description\" : \"clustered, unique, primary key located on \"
+    }, 
+    {
+      \"name\" : \"user_1595.Hsip_sample_Hsip_sample_Shape_sidx\", 
+      \"fields\" : \"Shape\", 
+      \"isAscending\" : false, 
+      \"isUnique\" : false, 
+      \"description\" : \"Shape Index\"
+    }
+  ], 
+  \"types\" : [], 
+  \"templates\" : [
+    {
+      \"name\" : \"New Feature\", 
+      \"description\" : \"\", 
+      \"drawingTool\" : \"esriFeatureEditToolLine\", 
+      \"prototype\" : {
+        \"attributes\" : {
+          \"OBJECTID\" : null, 
+          \"SITE_ID\" : null, 
+          \"CORRIDOR\" : null, 
+          \"BEG\" : null, 
+          \"END\" : null, 
+          \"BEG_DCMI\" : null, 
+          \"END_DCMI\" : null, 
+          \"DISTRICT\" : null, 
+          \"LOCATION\" : null, 
+          \"COUNTY\" : null, 
+          \"TYPE\" : null, 
+          \"HISTORY__1\" : null, 
+          \"HISTORY__2\" : null, 
+          \"INITIAL_CO\" : null, 
+          \"GENERATE_D\" : null, 
+          \"DIAGRAM_DA\" : null, 
+          \"INITIAL_OF\" : null, 
+          \"INITIAL__1\" : null, 
+          \"OFFICE_STU\" : null, 
+          \"RECOMMEND_\" : null, 
+          \"OFFICE_S_1\" : null, 
+          \"CONDUCTED_\" : null, 
+          \"DATE_\" : null, 
+          \"TOPOGRAPHY\" : null, 
+          \"VERTICAL\" : null, 
+          \"VERTICAL_T\" : null, 
+          \"NUMBER_OF_\" : null, 
+          \"ROAD_LANE_\" : null, 
+          \"ROAD_LANE1\" : null, 
+          \"SHOULDER_W\" : null, 
+          \"SHOULDER_S\" : null, 
+          \"SIGHT_DIST\" : null, 
+          \"POSTED_SPE\" : null, 
+          \"CENTERLINE\" : null, 
+          \"SHOULDER_M\" : null, 
+          \"OTHER_MARK\" : null, 
+          \"OTHER_MA_1\" : null, 
+          \"BRIDGE_SUR\" : null, 
+          \"BRIDGE_END\" : null, 
+          \"OTHER_DRAI\" : null, 
+          \"GUARDRAIL\" : null, 
+          \"GUARDRAIL_\" : null, 
+          \"DELINEATIO\" : null, 
+          \"TRAFFIC_SI\" : null, 
+          \"FLASHING_B\" : null, 
+          \"LUMINAIRES\" : null, 
+          \"MEDIAN\" : null, 
+          \"WARNING_SI\" : null, 
+          \"WARNING__1\" : null, 
+          \"GUIDE_SIGN\" : null, 
+          \"GUIDE_SI_1\" : null, 
+          \"REGULATORY\" : null, 
+          \"REGULATO_1\" : null, 
+          \"ROUTE_SIGN\" : null, 
+          \"ROUTE_SI_1\" : null, 
+          \"BALL_BANK_\" : null, 
+          \"REMARKS_RE\" : null, 
+          \"LOC_ERROR\" : null, 
+          \"SHAPE_LEN\" : null
+        }
+      }
+    }
+  ], 
+  \"supportedQueryFormats\" : \"JSON\", 
+  \"hasStaticData\" : true, 
+  \"maxRecordCount\" : 2000, 
+  \"capabilities\" : \"Query\"
+}
+        
+    </string>
+    <string name="config.picture.layer.definition">
+	{
+  \"currentVersion\" : 10.11, 
+  \"id\" : 0, 
+  \"name\" : \"HSIP Media\", 
+  \"type\" : \"Feature Layer\", 
+  \"displayField\" : \"PICTURE\", 
+  \"description\" : \"\", 
+  \"copyrightText\" : \"\", 
+  \"defaultVisibility\" : true, 
+  \"relationships\" : [], 
+  \"isDataVersioned\" : false, 
+  \"supportsRollbackOnFailureParameter\" : true, 
+  \"supportsStatistics\" : true, 
+  \"supportsAdvancedQueries\" : true, 
+  \"geometryType\" : \"esriGeometryPoint\", 
+  \"minScale\" : 0, 
+  \"maxScale\" : 0, 
+  \"extent\" : {
+    \"xmin\" : 295093.044500001, 
+    \"ymin\" : 120247.872299999, 
+    \"xmax\" : 767499.529200003, 
+    \"ymax\" : 339238.798, 
+    \"spatialReference\" : {
+      \"wkid\" : 32100, 
+      \"latestWkid\" : 32100
+    }
+  }, 
+  \"drawingInfo\" : {
+    \"renderer\" : 
+    {
+      \"type\" : \"simple\", 
+      \"symbol\" : 
+      {
+        \"type\" : \"esriSMS\", 
+        \"style\" : \"esriSMSCircle\", 
+        \"color\" : [
+          133, 
+          0, 
+          11, 
+          255
+        ], 
+        \"size\" : 4, 
+        \"angle\" : 0, 
+        \"xoffset\" : 0, 
+        \"yoffset\" : 0, 
+        \"outline\" : 
+        {
+          \"color\" : [
+            0, 
+            0, 
+            0, 
+            255
+          ], 
+          \"width\" : 1
+        }
+      }, 
+      \"label\" : \"\", 
+      \"description\" : \"\"
+    }, 
+    \"transparency\" : 0, 
+    \"labelingInfo\" : null
+  }, 
+  \"allowGeometryUpdates\" : true, 
+  \"hasAttachments\" : false, 
+  \"htmlPopupType\" : \"esriServerHTMLPopupTypeAsHTMLText\", 
+  \"hasM\" : false, 
+  \"hasZ\" : false, 
+  \"objectIdField\" : \"OBJECTID\", 
+  \"globalIdField\" : \"\", 
+  \"typeIdField\" : \"\", 
+  \"fields\" : [
+    {
+      \"name\" : \"OBJECTID\", 
+      \"type\" : \"esriFieldTypeOID\", 
+      \"alias\" : \"OBJECTID\", 
+      \"sqlType\" : \"sqlTypeOther\", 
+      \"nullable\" : false, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"PICTURE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"FILE\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DEVICE_PATH\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"DEVICE_PATH\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"PATH\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"PATH\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SITE_ID\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"SITE_ID\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 40, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }
+  ], 
+  \"indexes\" : [
+    {
+      \"name\" : \"PK__HSIP_May__F4B70D85C70C342B\", 
+      \"fields\" : \"OBJECTID\", 
+      \"isAscending\" : true, 
+      \"isUnique\" : true, 
+      \"description\" : \"clustered, unique, primary key\"
+    }, 
+    {
+      \"name\" : \"user_1595.HSIP_May2013_HSIP_Media_Shape_sidx\", 
+      \"fields\" : \"Shape\", 
+      \"isAscending\" : false, 
+      \"isUnique\" : false, 
+      \"description\" : \"Shape Index\"
+    }
+  ], 
+  \"types\" : [], 
+  \"templates\" : [
+    {
+      \"name\" : \"HSIP Media\", 
+      \"description\" : \"\", 
+      \"drawingTool\" : \"esriFeatureEditToolPoint\", 
+      \"prototype\" : {
+        \"attributes\" : {
+          \"SITE_ID\" : null, 
+          \"PICTURE\" : null, 
+          \"DEVICE_PATH\" : null, 
+          \"PATH\" : null
+        }
+      }
+    }
+  ], 
+  \"supportedQueryFormats\" : \"JSON\", 
+  \"hasStaticData\" : false, 
+  \"maxRecordCount\" : 1000, 
+  \"capabilities\" : \"Create,Delete,Query,Update,Editing\"
+}
+	</string>
+    
+    <!--
+     <string name=\"config.picture.layer.definition\">
+      {
+  \"currentVersion\" : 10.11, 
+  \"id\" : 0, 
+  \"name\" : \"hsip_pics\", 
+  \"type\" : \"Feature Layer\", 
+  \"displayField\" : \"\", 
+  \"description\" : \"\", 
+  \"copyrightText\" : \"\", 
+  \"defaultVisibility\" : true, 
+  \"relationships\" : [], 
+  \"isDataVersioned\" : false, 
+  \"supportsRollbackOnFailureParameter\" : true, 
+  \"supportsAdvancedQueries\" : true, 
+  \"geometryType\" : \"esriGeometryPoint\", 
+  \"minScale\" : 0, 
+  \"maxScale\" : 0, 
+  \"extent\" : {
+    \"xmin\" : -12273421.1464375, 
+    \"ymin\" : 5857574.01508856, 
+    \"xmax\" : -12273421.1464375, 
+    \"ymax\" : 5857574.01508856, 
+    \"spatialReference\" : {
+      \"wkid\" : 102100, 
+      \"latestWkid\" : 3857
+    }
+  }, 
+  \"drawingInfo\" : {
+    \"renderer\" : 
+    {
+      \"type\" : \"simple\", 
+      \"symbol\" : 
+      {
+        \"type\" : \"esriPMS\", 
+        \"url\" : \"RedSphere.png\", 
+        \"imageData\" : \"iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGXRFWHRTb2Z0d2FyZQBQYWludC5ORVQgdjMuNS4xTuc4+QAAB3VJREFUeF7tmPlTlEcexnve94U5mANQbgQSbgiHXHINlxpRIBpRI6wHorLERUmIisKCQWM8cqigESVQS1Kx1piNi4mW2YpbcZONrilE140RCTcy3DDAcL/zbJP8CYPDL+9Ufau7uqb7eZ7P+/a8PS8hwkcgIBAQCAgEBAICAYGAQEAgIBAQCAgEBAICAYGAQEAgIBAQCDx/AoowKXFMUhD3lQrioZaQRVRS+fxl51eBTZUTdZ41U1Rox13/0JF9csGJ05Qv4jSz/YPWohtvLmSKN5iTGGqTm1+rc6weICOBRbZs1UVnrv87T1PUeovxyNsUP9P6n5cpHtCxu24cbrmwKLdj+osWiqrVKhI0xzbmZ7m1SpJ+1pFpvE2DPvGTomOxAoNLLKGLscZYvB10cbYYjrJCb7A5mrxleOBqim+cWJRakZY0JfnD/LieI9V1MrKtwokbrAtU4Vm0A3TJnphJD4B+RxD0u0LA7w7FTE4oprOCMbklEGNrfdGf4IqnQTb4wc0MFTYibZqM7JgjO8ZdJkpMln/sKu16pHZGb7IfptIWg389DPp9kcChWODoMuDdBOhL1JgpisbUvghM7AqFbtNiaFP80RLnhbuBdqi0N+1dbUpWGde9gWpuhFi95yL7sS7BA93JAb+Fn8mh4QujgPeTgb9kAZf3Apd2A+fXQ38yHjOHozB1IAJjOSEY2RSIwVUv4dd4X9wJccGHNrJ7CYQ4GGjLeNNfM+dyvgpzQstKf3pbB2A6m97uBRE0/Ergcxr8hyqg7hrwn0vAtRIKIRX6Y2pMl0RhIj8co9nBGFrvh55l3ngU7YObng7IVnFvGS+BYUpmHziY/Ls2zgP9SX50by/G9N5w6I+ogYvpwK1SoOlHQNsGfWcd9Peqof88B/rTyzF9hAIopAByQzC0JQB9ST5oVnvhnt+LOGsprvUhxNIwa0aY7cGR6Cp7tr8+whkjawIxkRWC6YJI6N+lAKq3Qf/Tx+B77oGfaQc/8hB8w2Xwtw9Bf3kzZspXY/JIDEbfpAB2BKLvVV90Jvjgoac9vpRxE8kciTVCBMMkNirJ7k/tRHyjtxwjKV4Yp3t/6s+R4E+/DH3N6+BrS8E314Dvvg2+/Sb4hxfBf5sP/up2TF3ZhonK1zD6dhwGdwail26DzqgX8MRKiq9ZBpkSkmeYOyPM3m9Jjl+1Z9D8AgNtlAq6bZ70qsZi+q+bwV/7I/hbB8D/dAr8Axq89iz474p/G5++koHJy1sx/lkGdBc2YjA3HF0rHNHuboomuQj/5DgclIvOGCGCYRKFFuTMV7YUAD3VDQaLMfyqBcZORGPy01QKYSNm/rYV/Nd/Av9NHvgbueBrsjDzRQamKKDxT9Kgq1iLkbIUDOSHoiNcgnYHgnYZi+9ZExSbiSoMc2eE2flKcuJLa4KGRQz6/U0wlGaP0feiMH4uFpMXEjBVlYjp6lWY+SSZtim0kulYMiYuJEJXuhTDJ9UYPByOvoIwdCxfgE4bAo0Jh39xLAoVpMwIEQyTyFCQvGpLon9sJ0K3J4OBDDcMH1dj9FQsxkrjMPFRPCbOx2GyfLal9VEcxstioTulxjAFNfROJPqLl6Bnfyg6V7ugz5yBhuHwrZjBdiU5YJg7I8wOpifAKoVIW7uQ3rpOBH2b3ekVjYT2WCRG3o+mIGKgO0OrlIaebU/HYOQDNbQnojB4NJyGD0NPfjA0bwTRE6Q7hsUcWhkWN8yZqSQlWWGECAZLmJfJmbrvVSI8taK37xpbdB/wQW8xPee/8xIGjvlj8IQ/hk4G0JbWcX8MHPVDX4kveoq8ocn3xLM33NCZRcPHOGJYZIKfpQyq7JjHS6yJjcHujLHADgkpuC7h8F8zEVqXSNC2awE69lqhs8AamkO26HrbDt2H7dBVQov2NcW26CiwQtu+BWjdY4n2nZboTbfCmKcCnRyDO/YmyLPnDlHvjDH8G6zhS9/wlEnYR7X00fWrFYuWdVI0ZpuhcbcczW/R2qdAcz6t/bRov4mONeaaoYl+p22rHF0bVNAmKtBvweIXGxNcfFH8eNlC4m6wMWMusEnKpn5hyo48pj9gLe4SNG9QoGGLAk8z5XiaJUd99u8122/IpBA2K9BGg2vWWKAvRYVeLzEa7E1R422m2+MsSTem97nSYnfKyN6/mzATv7AUgqcMrUnmaFlLX3ysM0fj+t/b5lQLtK22QEfyAmiSLKFZpUJ7kBRPXKW4HqCYynWVHKSG2LkyZex1uO1mZM9lKem9Tx9jjY5iNEYo0bKMhn7ZAu0r6H5PpLXCAq0rKJClSjSGynE/QIkrQYqBPe6S2X+AJsY2Ped6iWZk6RlL0c2r5szofRsO9R5S1IfQLRCpQL1aifoYFerpsbkuTImaUJXuXIDiH6/Ys8vm3Mg8L2i20YqsO7fItKLcSXyn0kXccclVqv3MS6at9JU/Ox+ouns+SF6Z4cSupz7l8+z1ucs7LF1AQjOdxfGZzmx8Iu1TRcfnrioICAQEAgIBgYBAQCAgEBAICAQEAgIBgYBAQCAgEBAICAQEAv8H44b/6ZiGvGAAAAAASUVORK5CYII=\", 
+        \"contentType\" : \"image/png\"
+        , \"color\" : null, 
+        \"width\" : 15, 
+        \"height\" : 15, 
+        \"angle\" : 0, 
+        \"xoffset\" : 0, 
+        \"yoffset\" : 0
+      }, 
+      \"label\" : \"\", 
+      \"description\" : \"\"
+    }, 
+    \"labelingInfo\" : null
+  }, 
+  \"allowGeometryUpdates\" : true, 
+  \"hasAttachments\" : false, 
+  \"htmlPopupType\" : \"esriServerHTMLPopupTypeNone\", 
+  \"hasM\" : false, 
+  \"hasZ\" : false, 
+  \"objectIdField\" : \"FID\", 
+  \"globalIdField\" : \"\", 
+  \"typeIdField\" : \"\", 
+  \"fields\" : [
+    {
+      \"name\" : \"FID\", 
+      \"type\" : \"esriFieldTypeInteger\", 
+      \"alias\" : \"FID\", 
+      \"sqlType\" : \"sqlTypeInteger\", 
+      \"nullable\" : false, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OBJECTID\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"OBJECTID\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"PICTURE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"PICTURE\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 30, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DEVICE_PAT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"DEVICE_PAT\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 100, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"PATH\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"PATH\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 200, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SITE_ID\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"SITE_ID\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 30, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }
+  ], 
+  \"indexes\" : [
+    {
+      \"name\" : \"PK__hsip_pic__C1BEA5A2341C26BB\", 
+      \"fields\" : \"FID\", 
+      \"isAscending\" : true, 
+      \"isUnique\" : true, 
+      \"description\" : \"clustered, unique, primary key located on \"
+    }, 
+    {
+      \"name\" : \"user_1595.hsip_pics_hsip_pics_Shape_sidx\", 
+      \"fields\" : \"Shape\", 
+      \"isAscending\" : false, 
+      \"isUnique\" : false, 
+      \"description\" : \"Shape Index\"
+    }
+  ], 
+  \"types\" : [], 
+  \"templates\" : [
+    {
+      \"name\" : \"New Feature\", 
+      \"description\" : \"\", 
+      \"drawingTool\" : \"esriFeatureEditToolPoint\", 
+      \"prototype\" : {
+        \"attributes\" : {
+          \"OBJECTID\" : null, 
+          \"PICTURE\" : null, 
+          \"DEVICE_PAT\" : null, 
+          \"PATH\" : null, 
+          \"SITE_ID\" : null
+        }
+      }
+    }
+  ], 
+  \"supportedQueryFormats\" : \"JSON\", 
+  \"hasStaticData\" : false, 
+  \"maxRecordCount\" : 2000, 
+  \"capabilities\" : \"Create,Delete,Query,Update,Editing\"
+}   
+     </string> -->
+    <string name="config.layer.defin.prod">
+        {
+  \"currentVersion\" : 10.11, 
+  \"id\" : 0, 
+  \"name\" : \"HSIP_E_MONTANA\", 
+  \"type\" : \"Feature Layer\", 
+  \"displayField\" : \"\", 
+  \"description\" : \"\", 
+  \"copyrightText\" : \"\", 
+  \"defaultVisibility\" : true, 
+  \"relationships\" : [], 
+  \"isDataVersioned\" : false, 
+  \"supportsRollbackOnFailureParameter\" : true, 
+  \"supportsStatistics\" : true, 
+  \"supportsAdvancedQueries\" : true, 
+  \"geometryType\" : \"esriGeometryPolyline\", 
+  \"minScale\" : 0, 
+  \"maxScale\" : 0, 
+  \"extent\" : {
+    \"xmin\" : -11890116.8044591, 
+    \"ymin\" : 5805882.0751059, 
+    \"xmax\" : -11574413.3368618, 
+    \"ymax\" : 6248937.60167971, 
+    \"spatialReference\" : {
+      \"wkid\" : 102100, 
+      \"latestWkid\" : 3857
+    }
+  }, 
+  \"drawingInfo\" : {
+    \"renderer\" : 
+    {
+      \"type\" : \"simple\", 
+      \"symbol\" : 
+      {
+        \"type\" : \"esriSLS\", 
+        \"style\" : \"esriSLSSolid\", 
+        \"color\" : [
+          132, 
+          0, 
+          168, 
+          255
+        ], 
+        \"width\" : 3.4
+      }, 
+      \"label\" : \"\", 
+      \"description\" : \"\"
+    }, 
+    \"transparency\" : 0, 
+    \"labelingInfo\" : null
+  }, 
+  \"allowGeometryUpdates\" : true, 
+  \"hasAttachments\" : false, 
+  \"htmlPopupType\" : \"esriServerHTMLPopupTypeNone\", 
+  \"hasM\" : false, 
+  \"hasZ\" : false, 
+  \"objectIdField\" : \"FID\", 
+  \"globalIdField\" : \"\", 
+  \"typeIdField\" : \"\", 
+  \"fields\" : [
+    {
+      \"name\" : \"FID\", 
+      \"type\" : \"esriFieldTypeInteger\", 
+      \"alias\" : \"FID\", 
+      \"sqlType\" : \"sqlTypeInteger\", 
+      \"nullable\" : false, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SITE_ID\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Site ID\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CORRIDOR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Corridor\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Begin MP\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"End MP\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"Begin DCMI\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"End DCMI\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DISTRICT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"District\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOCATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Location\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"COUNTY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"County\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TYPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Type\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY_CO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare PPMS 09-11\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare TCP 12-16\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY__2\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare HSIP 10-11\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_CO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Comments\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GENERATE_D\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Generate Diagram\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DIAGRAM_DA\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Diagram Data Timeframe\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_OF\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study Date\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_STU\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Comments\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"RECOMMEND_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Recommend Field Study\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_S_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Approved By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CONDUCTED_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Field Study Conducted By\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DATE_\", 
+      \"type\" : \"esriFieldTypeDate\", 
+      \"alias\" : \"Field Study Date\", 
+      \"sqlType\" : \"sqlTypeTimestamp2\", \"length\" : 8, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TOPOGRAPHY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Topography\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Vertical\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL_T\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Verticle Type\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"NUMBER_OF_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Number of Road Lanes\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Width\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_W\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Width\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_S\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SIGHT_DIST\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Sight Distance\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"POSTED_SPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Posted Speed\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CENTERLINE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Centerline Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_M\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MARK\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Markings\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MA_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Marking Condition\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_SUR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge Surface\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_END\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge End Treatment\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_DRAI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Drainage\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail End Treatment\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DELINEATIO\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Delineation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TRAFFIC_SI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Traffic Signal\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"FLASHING_B\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Flashing Beacon\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LUMINAIRES\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Luminaries\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"MEDIAN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Median\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING_SI\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING__1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SIGN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SI_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATORY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Signs\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATO_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SIGN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Sign\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SI_1\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Sign Installation\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BALL_BANK_\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Ball Bank Reading\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REMARKS_RE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Remarks Recommendations\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 254, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOC_ERROR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"LR Error\", 
+      \"sqlType\" : \"sqlTypeNVarchar\", \"length\" : 50, 
+      \"nullable\" : true, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHAPE_LEN\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"SHAPE_LEN\", 
+      \"sqlType\" : \"sqlTypeFloat\", 
+      \"nullable\" : true, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }
+  ], 
+  \"indexes\" : [
+    {
+      \"name\" : \"PK__HSIP_Gle__C1BEA5A208BE5C1C\", 
+      \"fields\" : \"FID\", 
+      \"isAscending\" : true, 
+      \"isUnique\" : true, 
+      \"description\" : \"clustered, unique, primary key\"
+    }, 
+    {
+      \"name\" : \"user_1595.HSIP_Glendive_HSIP_Glendive_Shape_sidx\", 
+      \"fields\" : \"Shape\", 
+      \"isAscending\" : false, 
+      \"isUnique\" : false, 
+      \"description\" : \"Shape Index\"
+    }
+  ], 
+  \"types\" : [], 
+  \"templates\" : [
+    {
+      \"name\" : \"New Feature\", 
+      \"description\" : \"\", 
+      \"drawingTool\" : \"esriFeatureEditToolLine\", 
+      \"prototype\" : {
+        \"attributes\" : {
+          \"SITE_ID\" : null, 
+          \"CORRIDOR\" : null, 
+          \"BEG\" : null, 
+          \"END\" : null, 
+          \"BEG_DCMI\" : null, 
+          \"END_DCMI\" : null, 
+          \"DISTRICT\" : null, 
+          \"LOCATION\" : null, 
+          \"COUNTY\" : null, 
+          \"TYPE\" : null, 
+          \"HISTORY_CO\" : null, 
+          \"HISTORY__1\" : null, 
+          \"HISTORY__2\" : null, 
+          \"INITIAL_CO\" : null, 
+          \"GENERATE_D\" : null, 
+          \"DIAGRAM_DA\" : null, 
+          \"INITIAL_OF\" : null, 
+          \"INITIAL__1\" : null, 
+          \"OFFICE_STU\" : null, 
+          \"RECOMMEND_\" : null, 
+          \"OFFICE_S_1\" : null, 
+          \"CONDUCTED_\" : null, 
+          \"DATE_\" : null, 
+          \"TOPOGRAPHY\" : null, 
+          \"VERTICAL\" : null, 
+          \"VERTICAL_T\" : null, 
+          \"NUMBER_OF_\" : null, 
+          \"ROAD_LANE_\" : null, 
+          \"ROAD_LANE1\" : null, 
+          \"SHOULDER_W\" : null, 
+          \"SHOULDER_S\" : null, 
+          \"SIGHT_DIST\" : null, 
+          \"POSTED_SPE\" : null, 
+          \"CENTERLINE\" : null, 
+          \"SHOULDER_M\" : null, 
+          \"OTHER_MARK\" : null, 
+          \"OTHER_MA_1\" : null, 
+          \"BRIDGE_SUR\" : null, 
+          \"BRIDGE_END\" : null, 
+          \"OTHER_DRAI\" : null, 
+          \"GUARDRAIL\" : null, 
+          \"GUARDRAIL_\" : null, 
+          \"DELINEATIO\" : null, 
+          \"TRAFFIC_SI\" : null, 
+          \"FLASHING_B\" : null, 
+          \"LUMINAIRES\" : null, 
+          \"MEDIAN\" : null, 
+          \"WARNING_SI\" : null, 
+          \"WARNING__1\" : null, 
+          \"GUIDE_SIGN\" : null, 
+          \"GUIDE_SI_1\" : null, 
+          \"REGULATORY\" : null, 
+          \"REGULATO_1\" : null, 
+          \"ROUTE_SIGN\" : null, 
+          \"ROUTE_SI_1\" : null, 
+          \"BALL_BANK_\" : null, 
+          \"REMARKS_RE\" : null, 
+          \"LOC_ERROR\" : null, 
+          \"SHAPE_LEN\" : null
+        }
+      }
+    }
+  ], 
+  \"supportedQueryFormats\" : \"JSON\", 
+  \"hasStaticData\" : true, 
+  \"maxRecordCount\" : 2000, 
+  \"capabilities\" : \"Query\"
+}
+    </string>
+
+    <string name="config.layer.defin.prod2">
+    {
+  \"currentVersion\" : 10.11, 
+  \"id\" : 1, 
+  \"name\" : \"HSIP Sites\", 
+  \"type\" : \"Feature Layer\", 
+  \"displayField\" : \"SITE_ID\", 
+  \"description\" : \"\", 
+  \"copyrightText\" : \"\", 
+  \"defaultVisibility\" : true, 
+  \"relationships\" : [], 
+  \"isDataVersioned\" : false, 
+  \"supportsRollbackOnFailureParameter\" : true, 
+  \"supportsStatistics\" : true, 
+  \"supportsAdvancedQueries\" : true, 
+  \"geometryType\" : \"esriGeometryPolyline\", 
+  \"minScale\" : 0, 
+  \"maxScale\" : 0, 
+  \"extent\" : {
+    \"xmin\" : 157139.879799999, 
+    \"ymin\" : 120179.3915, 
+    \"xmax\" : 1005904.598, 
+    \"ymax\" : 514588.393199999, 
+    \"spatialReference\" : {
+      \"wkid\" : 32100, 
+      \"latestWkid\" : 32100
+    }
+  }, 
+  \"drawingInfo\" : {
+    \"renderer\" : 
+    {
+      \"type\" : \"simple\", 
+      \"symbol\" : 
+      {
+        \"type\" : \"esriSLS\", 
+        \"style\" : \"esriSLSSolid\", 
+        \"color\" : [
+          197, 
+          0, 
+          255, 
+          255
+        ], 
+        \"width\" : 3
+      }, 
+      \"label\" : \"\", 
+      \"description\" : \"\"
+    }, 
+    \"transparency\" : 0, 
+    \"labelingInfo\" : null
+  }, 
+  \"allowGeometryUpdates\" : true, 
+  \"hasAttachments\" : false, 
+  \"htmlPopupType\" : \"esriServerHTMLPopupTypeAsHTMLText\", 
+  \"hasM\" : false, 
+  \"hasZ\" : false, 
+  \"objectIdField\" : \"OBJECTID\", 
+  \"globalIdField\" : \"\", 
+  \"typeIdField\" : \"\", 
+  \"fields\" : [
+    {
+      \"name\" : \"OBJECTID\", 
+      \"type\" : \"esriFieldTypeOID\", 
+      \"alias\" : \"OBJECTID\", 
+      \"sqlType\" : \"sqlTypeOther\", 
+      \"nullable\" : false, 
+      \"editable\" : false, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SITE_ID\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Site ID\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CORRIDOR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Corridor\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Begin\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"End\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BEG_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"Begin Mile\", 
+      \"sqlType\" : \"sqlTypeOther\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"END_DCMI\", 
+      \"type\" : \"esriFieldTypeDouble\", 
+      \"alias\" : \"End Mile\", 
+      \"sqlType\" : \"sqlTypeOther\", 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DISTRICT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"District\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOCATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Location\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"COUNTY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"County\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TYPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Type\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY_COMPARE_PPMS_09_11\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare PPMS 09-11\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY_COMPARE_TCP_12_16\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare TCP 12-16\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"HISTORY_COMPARE_HSIP_10_11\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"History Compare HSIP 10-11\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_COMMENTS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Comments\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GENERATE_DIAGRAM\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Generate Diagram\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DIAGRAM_DATA_TIMEFRAME\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Diagram Data Timefram\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_OFFICE_STUDY_BY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study By\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"INITIAL_OFFICE_STUDY_DATE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Initial Office Study Date\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_STUDY_COMMENTS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Comments\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"RECOMMEND_FIELD_STUDY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Recommend Field Study\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OFFICE_STUDY_APPROVED_BY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Office Study Approved By\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CONDUCTED_BY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Field Study Conducted By\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DATE_\", 
+      \"type\" : \"esriFieldTypeDate\", 
+      \"alias\" : \"Field Study Date\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 8, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TOPOGRAPHY\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Topography\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Vertical\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"VERTICAL_TYPE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Verticle Type\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"NUMBER_OF_ROAD_LANES\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Number of Road Lanes\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE_WIDTH\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Width\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROAD_LANE_SURFACE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Road Lane Surface\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_WIDTH\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Width\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_SURFACE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Surface\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SIGHT_DISTANCE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Sight Distance\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"POSTED_SPEED\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Posted Speed\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"CENTERLINE_MARKINGS_CONDITION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Centerline Marking Condition\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"SHOULDER_MARKINGS_CONDITION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Shoulder Marking Condition\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MARKINGS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Markings\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_MARKINGS_CONDITION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Marking Condition\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_SURFACE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge Surface\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BRIDGE_END_TREATMENT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Bridge End Treatment\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"OTHER_DRAINAGE\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Other Drainage\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUARDRAIL_END_TREATMENT\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guardrail End Treatment\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"DELINEATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Delineation\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"TRAFFIC_SIGNAL\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Traffic Signal\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"FLASHING_BEACON\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Flashing Beacon\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LUMINAIRES\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Luminaries\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"MEDIAN\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Median\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING_SIGNS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Signs\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"WARNING_SIGNS_INSTALLATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Warning Sign Installation\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SIGNS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Signs\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"GUIDE_SIGNS_INSTALLATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Guide Sign Installation\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATORY_SIGNS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Signs\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REGULATORY_SIGNS_INSTALLATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Regulatory Sign Installation\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SIGNS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Signs\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"ROUTE_SIGNS_INSTALLATION\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Route Sign Installation\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"BALL_BANK_READING\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Ball Bank Reading\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"REMARKS_RECOMMENDATIONS\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"Remarks Recommendations\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 255, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }, 
+    {
+      \"name\" : \"LOC_ERROR\", 
+      \"type\" : \"esriFieldTypeString\", 
+      \"alias\" : \"LOC_ERROR\", 
+      \"sqlType\" : \"sqlTypeOther\", \"length\" : 50, 
+      \"nullable\" : true, 
+      \"editable\" : true, 
+      \"domain\" : null, 
+      \"defaultValue\" : null
+    }
+  ], 
+  \"indexes\" : [
+    {
+      \"name\" : \"PK__HSIP_May__F4B70D8589B1D863\", 
+      \"fields\" : \"OBJECTID\", 
+      \"isAscending\" : true, 
+      \"isUnique\" : true, 
+      \"description\" : \"clustered, unique, primary key\"
+    }, 
+    {
+      \"name\" : \"user_1595.HSIP_May2013_HSIP_Sites_Shape_sidx\", 
+      \"fields\" : \"Shape\", 
+      \"isAscending\" : false, 
+      \"isUnique\" : false, 
+      \"description\" : \"Shape Index\"
+    }
+  ], 
+  \"types\" : [], 
+  \"templates\" : [
+    {
+      \"name\" : \"HSIP Sites\", 
+      \"description\" : \"\", 
+      \"drawingTool\" : \"esriFeatureEditToolLine\", 
+      \"prototype\" : {
+        \"attributes\" : {
+          \"LOC_ERROR\" : null, 
+          \"SITE_ID\" : null, 
+          \"CORRIDOR\" : null, 
+          \"BEG\" : null, 
+          \"END\" : null, 
+          \"BEG_DCMI\" : null, 
+          \"END_DCMI\" : null, 
+          \"DISTRICT\" : null, 
+          \"LOCATION\" : null, 
+          \"COUNTY\" : null, 
+          \"TYPE\" : null, 
+          \"HISTORY_COMPARE_PPMS_09_11\" : null, 
+          \"HISTORY_COMPARE_TCP_12_16\" : null, 
+          \"HISTORY_COMPARE_HSIP_10_11\" : null, 
+          \"INITIAL_COMMENTS\" : null, 
+          \"GENERATE_DIAGRAM\" : null, 
+          \"DIAGRAM_DATA_TIMEFRAME\" : null, 
+          \"INITIAL_OFFICE_STUDY_BY\" : null, 
+          \"INITIAL_OFFICE_STUDY_DATE\" : null, 
+          \"OFFICE_STUDY_COMMENTS\" : null, 
+          \"RECOMMEND_FIELD_STUDY\" : null, 
+          \"OFFICE_STUDY_APPROVED_BY\" : null, 
+          \"CONDUCTED_BY\" : null, 
+          \"DATE_\" : null, 
+          \"TOPOGRAPHY\" : null, 
+          \"VERTICAL\" : null, 
+          \"VERTICAL_TYPE\" : null, 
+          \"NUMBER_OF_ROAD_LANES\" : null, 
+          \"ROAD_LANE_WIDTH\" : null, 
+          \"ROAD_LANE_SURFACE\" : null, 
+          \"SHOULDER_WIDTH\" : null, 
+          \"SHOULDER_SURFACE\" : null, 
+          \"SIGHT_DISTANCE\" : null, 
+          \"POSTED_SPEED\" : null, 
+          \"CENTERLINE_MARKINGS_CONDITION\" : null, 
+          \"SHOULDER_MARKINGS_CONDITION\" : null, 
+          \"OTHER_MARKINGS\" : null, 
+          \"OTHER_MARKINGS_CONDITION\" : null, 
+          \"BRIDGE_SURFACE\" : null, 
+          \"BRIDGE_END_TREATMENT\" : null, 
+          \"OTHER_DRAINAGE\" : null, 
+          \"GUARDRAIL\" : null, 
+          \"GUARDRAIL_END_TREATMENT\" : null, 
+          \"DELINEATION\" : null, 
+          \"TRAFFIC_SIGNAL\" : null, 
+          \"FLASHING_BEACON\" : null, 
+          \"LUMINAIRES\" : null, 
+          \"MEDIAN\" : null, 
+          \"WARNING_SIGNS\" : null, 
+          \"WARNING_SIGNS_INSTALLATION\" : null, 
+          \"GUIDE_SIGNS\" : null, 
+          \"GUIDE_SIGNS_INSTALLATION\" : null, 
+          \"REGULATORY_SIGNS\" : null, 
+          \"REGULATORY_SIGNS_INSTALLATION\" : null, 
+          \"ROUTE_SIGNS\" : null, 
+          \"ROUTE_SIGNS_INSTALLATION\" : null, 
+          \"BALL_BANK_READING\" : null, 
+          \"REMARKS_RECOMMENDATIONS\" : null
+        }
+      }
+    }
+  ], 
+  \"supportedQueryFormats\" : \"JSON\", 
+  \"hasStaticData\" : false, 
+  \"maxRecordCount\" : 1000, 
+  \"capabilities\" : \"Create,Delete,Query,Update,Editing\"
+}
+    
+    
+    </string>
+    
+    <string name="config.layer.defin.prod3">
+    {
+ \"currentVersion\": 10.11,
+ \"id\": 1,
+ \"name\": \"HSIP Sites\",
+ \"type\": \"Feature Layer\",
+ \"description\": \"\",
+ \"copyrightText\": \"\",
+ \"defaultVisibility\": true,
+ \"editFieldsInfo\": null,
+ \"ownershipBasedAccessControlForFeatures\": null,
+ \"syncCanReturnChanges\": false,
+ \"relationships\": [],
+ \"isDataVersioned\": false,
+ \"supportsRollbackOnFailureParameter\": true,
+ \"supportsStatistics\": true,
+ \"supportsAdvancedQueries\": true,
+ \"geometryType\": \"esriGeometryPolyline\",
+ \"minScale\": 0,
+ \"maxScale\": 0,
+ \"extent\": {
+  \"xmin\": 157139.879799999,
+  \"ymin\": 120179.3915,
+  \"xmax\": 1005904.598,
+  \"ymax\": 514588.393199999,
+  \"spatialReference\": {
+   \"wkid\": 32100,
+   \"latestWkid\": 32100
+  }
+ },
+ \"drawingInfo\": {
+  \"renderer\": {
+   \"type\": \"simple\",
+   \"symbol\": {
+    \"type\": \"esriSLS\",
+    \"style\": \"esriSLSSolid\",
+    \"color\": [
+     169,
+     0,
+     230,
+     255
+    ],
+    \"width\": 3
+   },
+   \"label\": \"\",
+   \"description\": \"\"
+  },
+  \"transparency\": 0,
+  \"labelingInfo\": null
+ },
+ \"hasM\": false,
+ \"hasZ\": false,
+ \"allowGeometryUpdates\": true,
+ \"hasAttachments\": false,
+ \"htmlPopupType\": \"esriServerHTMLPopupTypeAsHTMLText\",
+ \"objectIdField\": \"OBJECTID\",
+ \"globalIdField\": \"\",
+ \"displayField\": \"SITE_ID\",
+ \"typeIdField\": \"\",
+ \"fields\": [
+  {
+   \"name\": \"OBJECTID\",
+   \"type\": \"esriFieldTypeOID\",
+   \"alias\": \"OBJECTID\",
+   \"domain\": null,
+   \"editable\": false,
+   \"nullable\": false
+  },
+  {
+   \"name\": \"SITE_ID\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Site ID\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"CORRIDOR\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Corridor\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"BEG\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Begin\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"END\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"End\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"BEG_DCMI\",
+   \"type\": \"esriFieldTypeDouble\",
+   \"alias\": \"Begin Mile\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true
+  },
+  {
+   \"name\": \"END_DCMI\",
+   \"type\": \"esriFieldTypeDouble\",
+   \"alias\": \"End Mile\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true
+  },
+  {
+   \"name\": \"DISTRICT\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"District\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"LOCATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Location\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"COUNTY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"County\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"TYPE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Type\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"HISTORY_COMPARE_PPMS_09_11\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"History Compare PPMS 09-11\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"HISTORY_COMPARE_TCP_12_16\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"History Compare TCP 12-16\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"HISTORY_COMPARE_HSIP_10_11\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"History Compare HSIP 10-11\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"INITIAL_COMMENTS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Initial Comments\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"GENERATE_DIAGRAM\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Generate Diagram\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"DIAGRAM_DATA_TIMEFRAME\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Diagram Data Timefram\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"INITIAL_OFFICE_STUDY_BY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Initial Office Study By\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"INITIAL_OFFICE_STUDY_DATE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Initial Office Study Date\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"OFFICE_STUDY_COMMENTS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Office Study Comments\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"RECOMMEND_FIELD_STUDY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Recommend Field Study\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"OFFICE_STUDY_APPROVED_BY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Office Study Approved By\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"CONDUCTED_BY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Field Study Conducted By\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"DATE_\",
+   \"type\": \"esriFieldTypeDate\",
+   \"alias\": \"Field Study Date\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 36
+  },
+  {
+   \"name\": \"TOPOGRAPHY\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Topography\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"VERTICAL\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Vertical\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"VERTICAL_TYPE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Verticle Type\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"NUMBER_OF_ROAD_LANES\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Number of Road Lanes\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"ROAD_LANE_WIDTH\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Road Lane Width\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"ROAD_LANE_SURFACE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Road Lane Surface\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"SHOULDER_WIDTH\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Shoulder Width\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"SHOULDER_SURFACE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Shoulder Surface\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"SIGHT_DISTANCE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Sight Distance\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"POSTED_SPEED\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Posted Speed\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"CENTERLINE_MARKINGS_CONDITION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Centerline Marking Condition\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"SHOULDER_MARKINGS_CONDITION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Shoulder Marking Condition\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"OTHER_MARKINGS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Other Markings\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"OTHER_MARKINGS_CONDITION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Other Marking Condition\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"BRIDGE_SURFACE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Bridge Surface\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"BRIDGE_END_TREATMENT\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Bridge End Treatment\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"OTHER_DRAINAGE\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Other Drainage\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"GUARDRAIL\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Guardrail\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"GUARDRAIL_END_TREATMENT\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Guardrail End Treatment\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"DELINEATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Delineation\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"TRAFFIC_SIGNAL\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Traffic Signal\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"FLASHING_BEACON\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Flashing Beacon\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"LUMINAIRES\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Luminaries\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"MEDIAN\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Median\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"WARNING_SIGNS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Warning Signs\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"WARNING_SIGNS_INSTALLATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Warning Sign Installation\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"GUIDE_SIGNS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Guide Signs\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"GUIDE_SIGNS_INSTALLATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Guide Sign Installation\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"REGULATORY_SIGNS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Regulatory Signs\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"REGULATORY_SIGNS_INSTALLATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Regulatory Sign Installation\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"ROUTE_SIGNS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Route Signs\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"ROUTE_SIGNS_INSTALLATION\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Route Sign Installation\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"BALL_BANK_READING\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Ball Bank Reading\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"REMARKS_RECOMMENDATIONS\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"Remarks Recommendations\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 255
+  },
+  {
+   \"name\": \"LOC_ERROR\",
+   \"type\": \"esriFieldTypeString\",
+   \"alias\": \"LOC_ERROR\",
+   \"domain\": null,
+   \"editable\": true,
+   \"nullable\": true,
+   \"length\": 50
+  }
+ ],
+ \"types\": [],
+ \"templates\": [
+  {
+   \"name\": \"HSIP Sites\",
+   \"description\": \"\",
+   \"prototype\": {
+    \"attributes\": {
+     \"LOC_ERROR\": null,
+     \"SITE_ID\": null,
+     \"CORRIDOR\": null,
+     \"BEG\": null,
+     \"END\": null,
+     \"BEG_DCMI\": null,
+     \"END_DCMI\": null,
+     \"DISTRICT\": null,
+     \"LOCATION\": null,
+     \"COUNTY\": null,
+     \"TYPE\": null,
+     \"HISTORY_COMPARE_PPMS_09_11\": null,
+     \"HISTORY_COMPARE_TCP_12_16\": null,
+     \"HISTORY_COMPARE_HSIP_10_11\": null,
+     \"INITIAL_COMMENTS\": null,
+     \"GENERATE_DIAGRAM\": null,
+     \"DIAGRAM_DATA_TIMEFRAME\": null,
+     \"INITIAL_OFFICE_STUDY_BY\": null,
+     \"INITIAL_OFFICE_STUDY_DATE\": null,
+     \"OFFICE_STUDY_COMMENTS\": null,
+     \"RECOMMEND_FIELD_STUDY\": null,
+     \"OFFICE_STUDY_APPROVED_BY\": null,
+     \"CONDUCTED_BY\": null,
+     \"DATE_\": null,
+     \"TOPOGRAPHY\": null,
+     \"VERTICAL\": null,
+     \"VERTICAL_TYPE\": null,
+     \"NUMBER_OF_ROAD_LANES\": null,
+     \"ROAD_LANE_WIDTH\": null,
+     \"ROAD_LANE_SURFACE\": null,
+     \"SHOULDER_WIDTH\": null,
+     \"SHOULDER_SURFACE\": null,
+     \"SIGHT_DISTANCE\": null,
+     \"POSTED_SPEED\": null,
+     \"CENTERLINE_MARKINGS_CONDITION\": null,
+     \"SHOULDER_MARKINGS_CONDITION\": null,
+     \"OTHER_MARKINGS\": null,
+     \"OTHER_MARKINGS_CONDITION\": null,
+     \"BRIDGE_SURFACE\": null,
+     \"BRIDGE_END_TREATMENT\": null,
+     \"OTHER_DRAINAGE\": null,
+     \"GUARDRAIL\": null,
+     \"GUARDRAIL_END_TREATMENT\": null,
+     \"DELINEATION\": null,
+     \"TRAFFIC_SIGNAL\": null,
+     \"FLASHING_BEACON\": null,
+     \"LUMINAIRES\": null,
+     \"MEDIAN\": null,
+     \"WARNING_SIGNS\": null,
+     \"WARNING_SIGNS_INSTALLATION\": null,
+     \"GUIDE_SIGNS\": null,
+     \"GUIDE_SIGNS_INSTALLATION\": null,
+     \"REGULATORY_SIGNS\": null,
+     \"REGULATORY_SIGNS_INSTALLATION\": null,
+     \"ROUTE_SIGNS\": null,
+     \"ROUTE_SIGNS_INSTALLATION\": null,
+     \"BALL_BANK_READING\": null,
+     \"REMARKS_RECOMMENDATIONS\": null
+    }
+   },
+   \"drawingTool\": \"esriFeatureEditToolLine\"
+  }
+ ],
+ \"maxRecordCount\": 1000,
+ \"supportedQueryFormats\": \"JSON, AMF\",
+ \"capabilities\": \"Create,Delete,Query,Update,Uploads,Editing\"
+}
+    
+    
+    </string>
+    
+</resources>

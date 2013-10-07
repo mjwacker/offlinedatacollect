@@ -1,0 +1,58 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>MDT Offline Collect - Help Page</title> 
+	<link rel="stylesheet"  href="jquery.mobile-1.2.0.min.css" />  
+
+	<script src="scripts/jquery-1.8.2.min.js"></script>
+	<script src="scripts/jquery.mobile-1.2.0.min.js"></script>
+
+</head> 
+<body> 
+
+<div data-role="page">
+		
+		<div data-role="header" data-theme="a" data-position="fixed">
+			<h1>Help</h1>
+		</div>
+
+		<div data-role="content" data-theme="a">
+			<h2>Map</h2>
+			<p>The map is the main interface of the application.  Sites and pictures/video should will up on the map.</p>
+			<h2>User Location</h2>
+			<p>Your location is represented by a blue dot, it should update every time the gps detects a movement of 10 meters.</p>
+			<p>The Latitude and Longitude of the your location is shown in text in the upper left hand corner.</p>
+			<h2>Site Editing</h2>
+			<p>When a user touches a site it highlights and shows a small popup with some information about that site.  From there touch the Edit button to launch the Attribute Editing dialog.</p>
+			<p>When you have entered the information, tap the save button and all changes will be written to the device.  This could take a few seconds to write all the changes necessary, but you should be able to navigate the map while that is happening.  If you do not wish to save the changes, click on the Dismiss button.</p>
+			<h2>Capturing Images and Video</h2>
+			<p>When a user touches a site it highlights and shows a small popup with some information about that site.  From there touch either picture or video.  Note that at that point your location will be recorded.</p>
+			<h2>View Videos and Pictures</h2>
+			<p>Two options are available to view videos and pictures.  The first is to tap on the site and select the View button.  This will launch a grid of pictures and videos for the site.  The other method is to click on the dots, if it is a single image or video it will launch, if there are multiple pics it will launch in a grid similar to tapping the View button from the site callout. 
+			<h2>Menu</h2>
+			<p>Several options are available through the menu.</p>
+			<h2>GPS Status</h2>
+			<p>GPS Status is a third-party application used for displaying GPS information.  By touching this option the application will launch, simply click the back button to return to the app.</p>
+			<h2>Update Data</h2>
+			<p>The Update Data command queries the feature service via the internet.  It rewrites the local data stored on the device and gets any update that may have taken place from another user in the office or from another field user.  You must be online to do this.</p>
+			<h2>Send Edits</h2>
+			<p>The Send Edits command pushes any attribute edits, new media locations, or other updates back to the database.  You must be online to do this.</p>
+			<h2>Help</h2>
+			<p>The Help option will launch this page.  To return to the map press the back button</p>
+			<h2>The Back Button</h2>
+			<p>The Back Button, location in the bottom left of the screen on most tablets (can be different depending on device), is your friend.  It will always get you out of the screen you are in, for example this one.  If you hit back from the main screen it will exit the application.</p>
+			<h2>Known Issues</h2>
+			<p>View Images: The thumbnails are processed on the main thread, meaning if there are a lot of photos and videos for a site, it could freeze for a couple seconds before displaying.</p>
+			<h2>Troubleshooting</h2>
+			<p>If you are having issues with the GPS or the app in general the first thing to try is to back out of the app using the back button, then restart.</p>
+			<p>In rare cases it may be necessary to flush the device memory and running apps, this can be accomplished by using the Task Manager.  Kill all running apps under Active Applications, then clear memory under RAM Manager.  Then restart the app.</p>
+
+			<!--<a href="" data-role="button" data-rel="back" >OK</a>-->
+		</div>
+	</div>
+
+
+</body>
+</html>
