@@ -10,15 +10,14 @@ The obvious potential for gps data collection in modern smart phones and tablets
 ##Build
 In order to build the project you need the Android SDK for API Level 14 (lowest level supported) and Esri's ArcGIS for Android SDK.  You must register with esri to download, but it is free.
 
+Once you have the android and arcgis sdk, you may have to clean the project, or right click ArcGIS Tools > Convert to ArcGIS Android Project.
 
 ##Commit
+If you want to commit to the project, please [email] (mwacker@mt.gov).
 
+Stay tuned for more project details.
 
 ##Usage
-
-
-There are plans to release to the app store once a generic usage can be setup and packages with the app.  The OnPreferencesChanged and FirstRun/ initial query and setup of the services needs to be achieved.
-
-
+There are plans to release to the app store once a generic usage can be setup and packages with the app.  The OnPreferencesChanged and FirstRun/initial query and setup of the services needs to be achieved.
 
 ==================    
